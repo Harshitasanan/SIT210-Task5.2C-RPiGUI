@@ -41,9 +41,9 @@ led_color_map = {
 }
 
 led_buttons = {
-    led1: Button(root, text="Red", font=myFont, bg='gray', command=lambda: led_toggle(led1, led_buttons[led1], [led2, led3])),
-    led2: Button(root, text="Blue", font=myFont, bg='gray', command=lambda: led_toggle(led2, led_buttons[led2], [led1, led3])),
-    led3: Button(root, text="Green", font=myFont, bg='gray', command=lambda: led_toggle(led3, led_buttons[led3], [led1, led2]))
+    led1: Radiobutton(root, text="Red", font=myFont, bg='gray', command=lambda: led_toggle(led1, led_buttons[led1], [led2, led3])),
+    led2: Radiobutton(root, text="Blue", font=myFont, bg='gray', command=lambda: led_toggle(led2, led_buttons[led2], [led1, led3])),
+    led3: Radiobutton(root, text="Green", font=myFont, bg='gray', command=lambda: led_toggle(led3, led_buttons[led3], [led1, led2]))
 }
 
 for led, button in led_buttons.items():
