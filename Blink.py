@@ -3,7 +3,7 @@ import tkinter.font as FONT
 from gpiozero import LED
 import RPi.GPIO as GPIO
 
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) # Set the GPIO mode to use BCM numbering
 
 # Initialisation of LEDs
 led1 = LED(15)
@@ -17,6 +17,7 @@ root.title("LED Toggler")
 # Set the window size
 root.geometry("400x200")  # Width x Height
 
+# Define a custom font for the buttons
 myFont = FONT.Font(family='Helvetica', size=14, weight="bold")
 
 # Function to toggle the LEDs and update button colors
@@ -46,6 +47,7 @@ led_buttons = {
     led3: Radiobutton(root, text="Green", font=myFont, bg='gray', command=lambda: led_toggle(led3, led_buttons[led3], [led1, led2]))
 }
 
+# Grid layout for LED buttons
 for led, button in led_buttons.items():
     button.grid(row=0, column=list(led_buttons.keys()).index(led), padx=10, pady=10)
 
